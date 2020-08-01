@@ -1,14 +1,14 @@
 <template>
-  <div class="home">
+  <div class="admin">
     <Map />
   </div>
 </template>
 
 <script>
-import Map from '@/components/ViewMap';
+import Map from '@/components/EditMap';
 
 export default {
-  name: 'Home',
+  name: 'Admin',
   components: { Map },
 };
 </script>
