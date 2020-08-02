@@ -36,15 +36,17 @@
             inline
             persistent
           />
-          <Button
-            class="mr-2"
-            color="red"
-            :disabled="loading"
-            @click="startDeleteZones"
-          >
-            Delete All Zones
-          </Button>
-          <Button :loading="loading" @click="saveZones">Save Changes</Button>
+          <div class="flex justify-between">
+            <Button
+              class="mr-2"
+              color="red"
+              :disabled="loading"
+              @click="startDeleteZones"
+            >
+              Delete All Zones
+            </Button>
+            <Button :loading="loading" @click="saveZones">Save Changes</Button>
+          </div>
         </Panel>
       </div>
     </div>
