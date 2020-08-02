@@ -1,6 +1,6 @@
 {
   "name": "skagit-soils",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,6 +16,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@types/googlemaps": "^3.39.11",
     "electron-store": "^6.0.0",
+    "electron-updater": "^4.3.4",
     "fontsource-lato": "^2.2.6",
     "fontsource-open-sans": "^2.2.6",
     "lodash-es": "^4.17.15",

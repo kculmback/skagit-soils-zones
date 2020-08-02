@@ -1,6 +1,7 @@
 'use strict';
 
 import { app, protocol, shell, BrowserWindow, ipcMain } from 'electron';
+import { autoUpdater } from 'electron-updater';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
 import { URL } from 'url';
@@ -40,7 +41,7 @@ function createWindow() {
     createProtocol('app');
     // Load the index.html when not in development
     win.loadURL(`file://${__dirname}/index.html`);
-    // win.loadURL('app://./index.html');
+    autoUpdater.checkForUpdatesAndNotify();
   }
 
   win.on('closed', () => {
