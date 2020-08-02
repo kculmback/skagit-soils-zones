@@ -17,30 +17,22 @@
           <Textarea v-model="description" label="Description" />
           <div class="flex justify-between">
             <div>
-              <button
-                type="button"
-                class="bg-gray-300 px-6 py-2 rounded mr-2"
+              <Button
+                color="gray"
+                class="mr-2"
                 :class="{ 'cursor-not-allowed': !title || !color }"
                 :disabled="!title || !color"
                 @click="cancel"
               >
                 Cancel
-              </button>
-              <button
-                type="button"
-                class="bg-blue-300 px-6 py-2 rounded"
-                @click="saveZone"
-              >
+              </Button>
+              <Button @click="saveZone">
                 Save
-              </button>
+              </Button>
             </div>
-            <button
-              type="button"
-              class="bg-red-300 px-6 py-2 rounded"
-              @click="deleteZone"
-            >
+            <Button color="red" @click="deleteZone">
               Delete
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -49,13 +41,14 @@
 </template>
 
 <script>
+import Verte from 'verte';
+import Button from './Button';
 import Input from './Form/Input';
 import Textarea from './Form/Textarea';
-import Verte from 'verte';
 
 export default {
   name: 'ZoneOptions',
-  components: { Input, Textarea, Verte },
+  components: { Button, Input, Textarea, Verte },
   model: {
     prop: 'zone',
     event: 'update',
