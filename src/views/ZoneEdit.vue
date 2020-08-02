@@ -1,5 +1,6 @@
 <template>
   <div class="admin">
+    <h2>Edit Zones</h2>
     <Map />
   </div>
 </template>

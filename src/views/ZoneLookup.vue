@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h2>Zones</h2>
     <Map />
   </div>
 </template>
@@ -8,7 +9,7 @@
 import Map from '@/components/ViewMap';
 
 export default {
-  name: 'Home',
+  name: 'ZoneLookup',
   components: { Map },
 };
 </script>

@@ -10,13 +10,13 @@ function lazyLoad(view) {
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: lazyLoad('Home'),
+    name: 'Zone Lookup',
+    component: lazyLoad('ZoneLookup'),
   },
   {
-    path: '/admin',
-    name: 'Admin',
-    component: lazyLoad('Admin'),
+    path: '/zone-edit',
+    name: 'Zone Edit',
+    component: lazyLoad('ZoneEdit'),
   },
 ];
 

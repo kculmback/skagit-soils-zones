@@ -20,8 +20,8 @@ protocol.registerSchemesAsPrivileged([
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 700,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
@@ -116,4 +116,5 @@ const { zoneStore } = require('./store');
 ipcMain.handle('getZone', (event, key) => zoneStore.get(key));
 ipcMain.handle('setZone', (event, key, value) => zoneStore.set(key, value));
 ipcMain.handle('getZones', () => zoneStore.store);
+ipcMain.handle('deleteZone', (event, key) => zoneStore.delete(key));
 ipcMain.handle('clearZones', () => zoneStore.clear());

@@ -9,7 +9,6 @@ export default {
       skagitSoilsMarker: null,
       zones: [],
       selectedZone: null,
-      originalZoneColor: null,
     };
   },
   async mounted() {
@@ -35,9 +34,9 @@ export default {
 
       if (!zones.length) return;
 
-      zones.forEach(({ id, title, description, paths }) => {
+      zones.forEach(({ id, title, description, _color, paths }) => {
         const zone = new google.maps.Polygon({
-          ...this.polygonOptions(),
+          ...this.polygonOptions(_color),
           paths,
           map: this.map,
         });
@@ -45,6 +44,7 @@ export default {
         zone.set('id', id);
         zone.set('title', title);
         zone.set('description', description);
+        zone.set('_color', _color);
 
         this.zones.push(zone);
       });
@@ -64,15 +64,13 @@ export default {
       });
     },
     highlightZone(zone) {
-      this.originalZoneColor = zone.fillColor;
       zone.setOptions({
         ...this.polygonOptions('red'),
         fillOpacity: 0.9,
       });
     },
     resetZoneColor(zone) {
-      zone.setOptions(this.polygonOptions(this.originalZoneColor));
-      this.originalZoneColor = null;
+      zone.setOptions(this.polygonOptions(zone.get('_color')));
     },
   },
 };
