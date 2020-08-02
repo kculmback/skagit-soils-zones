@@ -18,6 +18,11 @@ const routes = [
     name: 'Zone Edit',
     component: lazyLoad('ZoneEdit'),
   },
+  {
+    path: '/export-import',
+    name: 'Export/Import',
+    component: lazyLoad('ExportImport'),
+  },
 ];
 
 const router = new VueRouter({

@@ -5,6 +5,7 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
 import { URL } from 'url';
 import path from 'path';
+import zonesStore from './store/zones';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -118,3 +119,4 @@ ipcMain.handle('setZone', (event, key, value) => zoneStore.set(key, value));
 ipcMain.handle('getZones', () => zoneStore.store);
 ipcMain.handle('deleteZone', (event, key) => zoneStore.delete(key));
 ipcMain.handle('clearZones', () => zoneStore.clear());
+ipcMain.handle('importZones', (event, value) => zonesStore.set(value));

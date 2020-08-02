@@ -5,6 +5,7 @@
       <ul>
         <NavLink :to="{ name: 'Zone Lookup' }">Zones</NavLink>
         <NavLink :to="{ name: 'Zone Edit' }">Edit Zones</NavLink>
+        <NavLink :to="{ name: 'Export/Import' }">Export/Import</NavLink>
       </ul>
     </nav>
   </div>
