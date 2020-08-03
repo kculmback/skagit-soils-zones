@@ -134,7 +134,7 @@ export default {
   }
 
   & .app-alert__icon {
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
   }
 
   & .app-alert__close {
