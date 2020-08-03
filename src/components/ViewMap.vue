@@ -88,21 +88,21 @@ export default {
           const location = result[0];
           const latLng = location.geometry.location;
 
-          this.foundMarker = new google.maps.Marker({
-            position: latLng,
-            title: this.address,
-            map: this.map,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-          });
-
-          this.map.panTo(latLng);
-
           const foundZone = this.zones.find(zone =>
             google.maps.geometry.poly.containsLocation(latLng, zone)
           );
 
           if (foundZone) {
             this.selectedZone = foundZone;
+
+            this.foundMarker = new google.maps.Marker({
+              position: latLng,
+              title: this.address,
+              map: this.map,
+              icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            });
+
+            this.map.panTo(latLng);
           } else {
             this.notFound = true;
           }
