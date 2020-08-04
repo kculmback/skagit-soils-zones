@@ -98,9 +98,9 @@ export default {
       return {
         fillColor: fillColor || getRandomColor(basicColorsArray),
         fillOpacity: 0.5,
-        clickable: true,
+        clickable: false,
         editable: true,
-        draggable: true,
+        draggable: false,
       };
     },
     preMap() {
