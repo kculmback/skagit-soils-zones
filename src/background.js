@@ -31,6 +31,7 @@ function createWindow() {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
       preload: path.join(__dirname, 'preload.js'),
       devTools: isDevelopment,
+      icon: path.join(__static, 'skagit-soils-logo.png'),
     },
   });
 

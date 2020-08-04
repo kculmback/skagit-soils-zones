@@ -1,6 +1,7 @@
 <template>
   <div id="nav" class="text-left py-4 px-6 border-r">
-    <h1 class="">Skagit Soils</h1>
+    <img class="w-32 mx-auto mb-4" src="../../assets/skagit-soils-logo.svg" />
+    <!-- <h1 class="">Skagit Soils</h1> -->
     <nav>
       <ul>
         <NavLink :to="{ name: 'Zone Lookup' }">Zones</NavLink>
